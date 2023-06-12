@@ -27,7 +27,7 @@ const Home = () => {
                 description: "Test Transaction for React App",
                 image: "https://i.ibb.co/BtywP70/Logo.png",
                 order_id: order.id, //This is a sample Order ID. Pass the `id` obtained in the response of Step 1
-                callback_url: `${BASE_URL}paymentVerification`,
+                callback_url: `${BASE_URL}api/paymentVerification`,
                 prefill: {
                     name: "Gaurav Kumar",
                     email: "gaurav.kumar@example.com",
