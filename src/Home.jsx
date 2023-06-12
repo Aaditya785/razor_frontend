@@ -14,10 +14,10 @@ const Home = () => {
 
         try {
             const { data: { key } } = await axios.get(`${BASE_URL}api/getkey`);
+            // const { data: { key } } = await axios.get("http://localhost:4000/api/getkey");
 
-            const { data: { order } } = await axios.post(`${BASE_URL}api/checkout`, {
-                amount
-            });
+            const { data: { order } } = await axios.post(`${BASE_URL}api/checkout`, { amount });
+            // const { data: { order } } = await axios.post("http://localhost:4000/api/checkout", { amount });
 
             const options = {
                 key,
@@ -27,7 +27,8 @@ const Home = () => {
                 description: "Test Transaction for React App",
                 image: "https://i.ibb.co/BtywP70/Logo.png",
                 order_id: order.id, //This is a sample Order ID. Pass the `id` obtained in the response of Step 1
-                callback_url: `${BASE_URL}api/paymentVerification`,
+                // callback_url: `${BASE_URL}api/paymentVerification`,
+                callback_url: "http://localhost:4000/api/paymentVerification",
                 prefill: {
                     name: "Gaurav Kumar",
                     email: "gaurav.kumar@example.com",
